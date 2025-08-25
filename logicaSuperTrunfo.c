@@ -38,12 +38,12 @@ int main()
 
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+
     // Declaração das variáveis
-    char state1[5], state2[5];
-    char code1[5], code2[5];
-    char city1[50], city2[50];
+    char country1[50], country2[50];
     unsigned long int population1, population2;
     int touristSpot1, touristSpot2;
+    int option;
     float area1, area2;
     float pib1, pib2;
     float popDensity1, popDensity2;
@@ -51,14 +51,9 @@ int main()
 
     // Cadastro da primeira carta
     printf("#Enter first card atributes#\n");
-    printf("State: ");
-    scanf("%s", state1);
 
-    printf("Card code: ");
-    scanf("%s", code1);
-
-    printf("City: ");
-    scanf("%s", city1);
+    printf("Country: ");
+    scanf("%s", country1);
 
     printf("Population: ");
     scanf("%lu", &population1);
@@ -75,17 +70,11 @@ int main()
     popDensity1 = (float)population1 / area1;
     pibPerCapita1 = (float)pib1 / population1;
 
-
     // Cadastro da segunda carta
     printf("\n#Enter second card atributes#\n");
-    printf("State: ");
-    scanf(" %s", state2);
 
-    printf("Card code: ");
-    scanf("%s", code2);
-
-    printf("City: ");
-    scanf("%s", city2);
+    printf("Country: ");
+    scanf("%s", country2);
 
     printf("Population: ");
     scanf("%lu", &population2);
@@ -102,16 +91,66 @@ int main()
     popDensity2 = (float)population2 / area2;
     pibPerCapita2 = (float)pib2 / population2;
 
-    // Comparando atributos das cartas
-    printf("Cards comparison (Atribute: Population):\n\n");
-    printf("Card 1 - %s (%s): %lu\n", city1, state1, population1);
-    printf("Card 2 - %s (%s): %lu\n", city2, state2, population2);
+    // Menu principal
+    printf("\n# MAIN MENU #\n");
+    printf("Select an option for comparison:\n");
+    printf("1. Population\n");
+    printf("2. Area\n");
+    printf("3. PIB\n");
+    printf("4. Tourist Spots\n");
+    printf("5. Population Density\n");
+    printf("Option: ");
+    scanf("%d", &option);
+    printf("\n%s Vs %s\n", country1, country2);
 
-    // Exibe a carta vencedora
-    if (population1 > population2) {
-        printf("Result: Card 1 (%s) wins!\n", city1);
-    } else {
-        printf("Result: Card 2 (%s) wins!\n", city2);
+    // Estrutura do menu principal
+    switch (option)
+    {
+    case 1:
+        printf("Selected Atribute: Population\n");
+        printf("Card 1: %lu inhabitants\n", population1);
+        printf("Card 2: %lu inhabitants\n", population2);
+        break;
+    case 2:
+        printf("Selected Atribute: Area\n");
+        printf("Card 1: %.2f kilometers\n", area1);
+        printf("Card 2: %.2f kilometers\n", area2);
+        break;
+    case 3:
+        printf("Selected Atribute: PIB\n");
+        printf("Card 1: %.2f billions of dollars\n", pib1);
+        printf("Card 2: %.2f billions of dollars\n", pib2);
+        break;
+    case 4:
+        printf("Selected Atribute: Tourist Spots\n");
+        printf("Card 1: %d tourist spots\n", touristSpot1);
+        printf("Card 2: %d tourist spots\n", touristSpot2);
+        break;
+    case 5:
+        printf("Selected Atribute: Population Density\n");
+        printf("Card 1: %.2f inhab/km²\n", popDensity1);
+        printf("Card 2: %.2f inhab/km²\n", popDensity2);
+        break;
+    default:
+        break;
+    }
+
+    // Estrutura lógica de exibição dos resultados
+    if (population1 == population2 || area1 == area2 ||
+        pib1 == pib2 || touristSpot1 == touristSpot2 ||
+        popDensity1 == popDensity2)
+    {
+        printf("Result: That's a draw!!");
+    }
+    else if (population1 > population2 || area1 > area2 ||
+             pib1 > pib2 || touristSpot1 > touristSpot2 ||
+             popDensity1 < popDensity2)
+    {
+        printf("Result: Card 1 (%s) wins!\n", country1);
+    }
+    else
+    {
+        printf("Result: Card 2 (%s) wins!\n", country2);
     }
 
     return 0;
