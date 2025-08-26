@@ -41,13 +41,17 @@ int main()
 
     // Declaração das variáveis
     char country1[50], country2[50];
+
     unsigned long int population1, population2;
     int touristSpot1, touristSpot2;
-    int option;
+    int option, option2;
+
     float area1, area2;
     float pib1, pib2;
     float popDensity1, popDensity2;
     float pibPerCapita1, pibPerCapita2;
+    float firstCard1Atribute, secondCard1Atribute;
+    float firstCard2Atribute, secondCard2Atribute;
 
     // Cadastro da primeira carta
     printf("#Enter first card atributes#\n");
@@ -93,7 +97,7 @@ int main()
 
     // Menu principal
     printf("\n# MAIN MENU #\n");
-    printf("Select an option for comparison:\n");
+    printf("Select the first atribute:\n");
     printf("1. Population\n");
     printf("2. Area\n");
     printf("3. PIB\n");
@@ -108,28 +112,195 @@ int main()
     {
     case 1:
         printf("Selected Atribute: Population\n");
-        printf("Card 1: %lu inhabitants\n", population1);
-        printf("Card 2: %lu inhabitants\n", population2);
+        printf("First atribute - Card 1: %lu inhabitants\n", population1);
+        printf("First atribute - Card 2: %lu inhabitants\n\n", population2);
+        firstCard1Atribute = (float) population1;
+        firstCard2Atribute = (float) population2;
+        printf("Select the second atribute:\n");
+        printf("2. Area\n");
+        printf("3. PIB\n");
+        printf("4. Tourist Spots\n");
+        printf("5. Population Density\n");
+        printf("Option: ");
+        scanf("%d", &option2);
+
+        switch (option2)
+        {
+        case 2:
+            printf("Selected Atribute: Area\n");
+            printf("Second atribute - Card 1: %.2f kilometers\n", area1);
+            printf("Second atribute - Card 2: %.2f kilometers\n", area2);
+            break;
+        case 3:
+            printf("Selected Atribute: PIB\n");
+            printf("Second atribute - Card 1: %.2f billions of dollars\n", pib1);
+            printf("Second atribute - Card 2: %.2f billions of dollars\n", pib2);
+            break;
+        case 4:
+            printf("Selected Atribute: Tourist Spots\n");
+            printf("Second atribute - Card 1: %d tourist spots\n", touristSpot1);
+            printf("Second atribute - Card 2: %d tourist spots\n", touristSpot2);
+        case 5:
+            printf("Selected Atribute: Population Density\n");
+            printf("Second atribute - Card 1: %.2f inhab/km²\n", popDensity1);
+            printf("Second atribute - Card 2: %.2f inhab/km²\n", popDensity2);
+            break;
+        default:
+            printf("Invalid command.");
+            break;
+        }
         break;
     case 2:
         printf("Selected Atribute: Area\n");
-        printf("Card 1: %.2f kilometers\n", area1);
-        printf("Card 2: %.2f kilometers\n", area2);
+        printf("First atribute - Card 1: %.2f kilometers\n", area1);
+        printf("First atribute - Card 2: %.2f kilometers\n", area2);
+        printf("Select the second atribute:\n");
+        printf("1. Population\n");
+        printf("3. PIB\n");
+        printf("4. Tourist Spots\n");
+        printf("5. Population Density\n");
+        printf("Option: ");
+        scanf("%d", &option2);
+
+        switch (option2)
+        {
+        case 1:
+            printf("Selected Atribute: Population\n");
+            printf("Second atribute - Card 1: %lu inhabitants\n", population1);
+            printf("Second atribute - Card 2: %lu inhabitants\n\n", population2);
+            break;
+        case 3:
+            printf("Selected Atribute: PIB\n");
+            printf("Second atribute - Card 1: %.2f billions of dollars\n", pib1);
+            printf("Second atribute - Card 2: %.2f billions of dollars\n", pib2);
+            break;
+        case 4:
+            printf("Selected Atribute: Tourist Spots\n");
+            printf("Second atribute - Card 1: %d tourist spots\n", touristSpot1);
+            printf("Second atribute - Card 2: %d tourist spots\n", touristSpot2);
+        case 5:
+            printf("Selected Atribute: Population Density\n");
+            printf("Second atribute - Card 1: %.2f inhab/km²\n", popDensity1);
+            printf("Second atribute - Card 2: %.2f inhab/km²\n", popDensity2);
+            break;
+        default:
+            printf("Invalid command.");
+            break;
+        }
         break;
     case 3:
         printf("Selected Atribute: PIB\n");
-        printf("Card 1: %.2f billions of dollars\n", pib1);
-        printf("Card 2: %.2f billions of dollars\n", pib2);
+        printf("First atribute - Card 1: %.2f billions of dollars\n", pib1);
+        printf("First atribute - Card 2: %.2f billions of dollars\n", pib2);
+        printf("Select the second atribute:\n");
+        printf("1. Population\n");
+        printf("2. Area\n");
+        printf("4. Tourist Spots\n");
+        printf("5. Population Density\n");
+        printf("Option: ");
+        scanf("%d", &option2);
+
+        switch (option2)
+        {
+        case 1:
+            printf("Selected Atribute: Population\n");
+            printf("Second atribute - Card 1: %lu inhabitants\n", population1);
+            printf("Second atribute - Card 2: %lu inhabitants\n\n", population2);
+            break;
+        case 2:
+            printf("Selected Atribute: Area\n");
+            printf("Second atribute - Card 1: %.2f kilometers\n", area1);
+            printf("Second atribute - Card 2: %.2f kilometers\n", area2);
+            break;
+        case 4:
+            printf("Selected Atribute: Tourist Spots\n");
+            printf("Second atribute - Card 1: %d tourist spots\n", touristSpot1);
+            printf("Second atribute - Card 2: %d tourist spots\n", touristSpot2);
+        case 5:
+            printf("Selected Atribute: Population Density\n");
+            printf("Second atribute - Card 1: %.2f inhab/km²\n", popDensity1);
+            printf("Second atribute - Card 2: %.2f inhab/km²\n", popDensity2);
+            break;
+        default:
+            printf("Invalid command.");
+            break;
+        }
         break;
     case 4:
         printf("Selected Atribute: Tourist Spots\n");
-        printf("Card 1: %d tourist spots\n", touristSpot1);
-        printf("Card 2: %d tourist spots\n", touristSpot2);
+        printf("First atribute - Card 1: %d tourist spots\n", touristSpot1);
+        printf("First atribute - Card 2: %d tourist spots\n", touristSpot2);
+        printf("Select the second atribute:\n");
+        printf("1. Population\n");
+        printf("2. Area\n");
+        printf("3. PIB\n");
+        printf("5. Population Density\n");
+        printf("Option: ");
+        scanf("%d", &option2);
+
+        switch (option2)
+        {
+        case 1:
+            printf("Selected Atribute: Population\n");
+            printf("Second atribute - Card 1: %lu inhabitants\n", population1);
+            printf("Second atribute - Card 2: %lu inhabitants\n\n", population2);
+            break;
+        case 2:
+            printf("Selected Atribute: Area\n");
+            printf("Second atribute - Card 1: %.2f kilometers\n", area1);
+            printf("Second atribute - Card 2: %.2f kilometers\n", area2);
+            break;
+        case 3:
+            printf("Selected Atribute: PIB\n");
+            printf("Second atribute - Card 1: %.2f billions of dollars\n", pib1);
+            printf("Second atribute - Card 2: %.2f billions of dollars\n", pib2);
+        case 5:
+            printf("Selected Atribute: Population Density\n");
+            printf("Second atribute - Card 1: %.2f inhab/km²\n", popDensity1);
+            printf("Second atribute - Card 2: %.2f inhab/km²\n", popDensity2);
+            break;
+        default:
+            printf("Invalid command.");
+            break;
+        }
         break;
     case 5:
         printf("Selected Atribute: Population Density\n");
-        printf("Card 1: %.2f inhab/km²\n", popDensity1);
-        printf("Card 2: %.2f inhab/km²\n", popDensity2);
+        printf("First atribute - Card 1: %.2f inhab/km²\n", popDensity1);
+        printf("First atribute - Card 2: %.2f inhab/km²\n", popDensity2);
+        printf("Select the second atribute:\n");
+        printf("1. Population\n");
+        printf("2. Area\n");
+        printf("3. PIB\n");
+        printf("4. Tourist Spots\n");
+        printf("Option: ");
+        scanf("%d", &option2);
+
+        switch (option2)
+        {
+        case 1:
+            printf("Selected Atribute: Population\n");
+            printf("Second atribute - Card 1: %lu inhabitants\n", population1);
+            printf("Second atribute - Card 2: %lu inhabitants\n\n", population2);
+            break;
+        case 2:
+            printf("Selected Atribute: Area\n");
+            printf("Second atribute - Card 1: %.2f kilometers\n", area1);
+            printf("Second atribute - Card 2: %.2f kilometers\n", area2);
+            break;
+        case 3:
+            printf("Selected Atribute: PIB\n");
+            printf("Second atribute - Card 1: %.2f billions of dollars\n", pib1);
+            printf("Second atribute - Card 2: %.2f billions of dollars\n", pib2);
+        case 4:
+            printf("Selected Atribute: Tourist Spots\n");
+            printf("Second atribute - Card 1: %d tourist spots\n", touristSpot1);
+            printf("Second atribute - Card 2: %d tourist spots\n", touristSpot2);
+            break;
+        default:
+            printf("Invalid command.");
+            break;
+        }
         break;
     default:
         break;
